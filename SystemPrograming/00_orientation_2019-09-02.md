@@ -19,7 +19,7 @@
 </ul>
 
 <p><strong>Code</strong>
-	void main(int argc, const char * argv[]) {
+	void main(int argc, const char * argv[]) {<br>
     // insert code here...
     float a = 1e20;
     float b = -1e20;
