@@ -18,7 +18,7 @@
 	<li>Range: -2^31 ~ 2^31-1</li>
 </ul>
 
-<p><strong>Code</strong>
+<p><strong>Code</strong><br>
 	void main(int argc, const char * argv[]) {<br>
     // insert code here...
     float a = 1e20;
