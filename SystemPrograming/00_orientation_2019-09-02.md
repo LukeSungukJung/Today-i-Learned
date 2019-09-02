@@ -20,13 +20,13 @@
 
 <p><strong>Code</strong><br>
 	void main(int argc, const char * argv[]) {<br>
-    // insert code here...
-    float a = 1e20;
-    float b = -1e20;
-    float c = 3.14;
-    printf("%f \n",(a+b)+c);
-    printf("%f \n",a+(b+c));
-}
+    // insert code here...<br>
+    float a = 1e20;<br>
+    float b = -1e20;<br>
+    float c = 3.14;<br>
+    printf("%f \n",(a+b)+c);<br>
+    printf("%f \n",a+(b+c));<br>
+}<br>
 </p>
 <img src="c_res/mmoverflow.png"></img>
 </div>
