@@ -121,23 +121,23 @@
 <table>
 	<tbody>
 		<tr>
-			<td rowspan="3" colspan="4">-</td>
+			<td rowspan="3" colspan="4">⌈-> (phase 1)</td>
+			<td>디자인</td>
+			<td>V & V</td>
+			<td>ㄱ</td>
 			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
+		</tr>
+		<tr>	
+			<td>ㄴ</td>
+			<td>구현</td>
+			<td>V & V</td>
+			<td>ㄱ</td>
 		</tr>
 		<tr>
 			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-		</tr>
-		<tr>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
+			<td>ㄴ</td>
+			<td>통합 및 배포 </td>
+			<td>V & V</td>
 		</tr>
 		<tr>
 			<td>요구사항 정의</td>
@@ -170,7 +170,7 @@
 			<td>-</td>
 		</tr>
 		<tr>
-			<td rowspan="4" colspan="4">-</td>
+			<td rowspan="4" colspan="4">ㄴ-></td>
 			<td>-</td>
 			<td>-</td>
 			<td>-</td>
