@@ -144,30 +144,19 @@
 			<td>V & V</td>
 			<td>ㄱ</td>
 			<td>-</td>
-			<td colspan="3" rowspan="3">-</td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
+			<td colspan="4" rowspan="4">-</td>
 		</tr>
 		<tr>
 			<td>ㄴ</td>
 			<td>명세화</td>
 			<td>V & V</td>
 			<td>ㄱ</td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
 		</tr>
 		<tr>
 			<td>-</td>
 			<td>ㄴ</td>
 			<td>명세화</td>
 			<td>V & V</td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
 		</tr>
 		<tr>
 			<td rowspan="4" colspan="4">ㄴ-> (phase 2)</td>
