@@ -135,7 +135,7 @@
 		</tr>
 		<tr>
 			<td>-</td>
-			<td>ㄴ</td>
+			<td></td>
 			<td>통합 및 배포 </td>
 			<td>V & V</td>
 		</tr>
@@ -143,7 +143,7 @@
 			<td>요구사항 정의</td>
 			<td>V & V</td>
 			<td>ㄱ</td>
-			<td>-</td>
+			<td colspan="3" rowspan="3">-</td>
 			<td>-</td>
 			<td>-</td>
 			<td>-</td>
@@ -171,23 +171,22 @@
 		</tr>
 		<tr>
 			<td rowspan="4" colspan="4">ㄴ-></td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-		</tr>
-		<tr>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
+			<td>디자인</td>
+			<td>V & V</td>
+			<td>ㄱ</td>
 			<td>-</td>
 		</tr>
 		<tr>
+			<td>ㄴ</td>
+			<td>구현</td>
+			<td>V & V</td>
+			<td>ㄱ</td>
+		</tr>
+		<tr>
 			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-
+			<td></td>
+			<td>통합 및 배포 </td>
+			<td>V & V</td>
 		</tr>
 	</tbody>
 </table>
