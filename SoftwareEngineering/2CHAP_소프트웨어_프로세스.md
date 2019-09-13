@@ -41,9 +41,9 @@
 <table>
 	<thead>
 		<tr>
-			<th>요구사항 정의</th>
+			<td>요구사항 정의</td>
 			<td>V & V( Validation & Verifitcation ) </td>
-			<td>-</td>
+			<td></td>
 			<td>-</td>
 			<td>-</td>
 			<td>-</td>
@@ -52,48 +52,48 @@
 	</thead>
 	<tbody>
 		<tr>
-			<td>-</td>
+			<td>ㄴ</td>
 			<td>명세화</td>
 			<td>V & V( Validation & Verifitcation ) </td>
-			<td>-</td>
+			<td>ㄱ</td>
 			<td>-</td>
 			<td>-</td>
 			<td>-</td>
 		</tr>
 		<tr>
 			<td>-</td>
-			<td>-</td>
+			<td>ㄴ</td>
 			<td>디자인</td>
 			<td>V & V( Validation & Verifitcation ) </td>
-			<td>-</td>
+			<td>ㄱ</td>
 			<td>-</td>
 			<td>-</td>
 		</tr>
 		<tr>
 			<td>-</td>
 			<td>-</td>
-			<td>-</td>
+			<td>ㄴ</td>
 			<td>구현</td>
 			<td>V & V( Validation & Verifitcation ) </td>
-			<td>-</td>
+			<td>ㄱ</td>
 			<td>-</td>
 		</tr>
 		<tr>
 			<td>-</td>
 			<td>-</td>
 			<td>-</td>
-			<td>-</td>
+			<td>ㄴ</td>
 			<td>통합 및 배포</td>
 			<td>V & V( Validation & Verifitcation ) </td>
-			<td>-</td>
+			<td>ㄱ</td>
 		</tr>
 		<tr>
 			<td>-</td>
 			<td>-</td>
 			<td>-</td>
 			<td>-</td>
-			<td>-</td>
-			<td>유지보수</td>
+			<td>ㄴ</td>
+			<td>유지보</td>
 			<td>V & V( Validation & Verifitcation ) </td>
 		</tr>
 	</tbody>
