@@ -149,8 +149,8 @@
 		</tr>
 		<tr>
 			<td>요구사항 정의</td>
-			<td>V & V( Validation & Verifitcation ) </td>
-			<td>ㄱ\</td>
+			<td>V & V</td>
+			<td>ㄱ</td>
 			<td>-</td>
 			<td>-</td>
 			<td>-</td>
@@ -159,7 +159,7 @@
 		<tr>
 			<td>ㄴ</td>
 			<td>명세화</td>
-			<td>V & V( Validation & Verifitcation ) </td>
+			<td>V & V</td>
 			<td>ㄱ</td>
 			<td>-</td>
 			<td>-</td>
@@ -167,9 +167,9 @@
 		</tr>
 		<tr>
 			<td>-</td>
-			<td>ㄴ</td>
+			<td></td>
 			<td>명세화</td>
-			<td>V & V( Validation & Verifitcation ) </td>
+			<td>V & V</td>
 			<td>-</td>
 			<td>-</td>
 			<td>-</td>
