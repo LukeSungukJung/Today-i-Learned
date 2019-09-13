@@ -43,7 +43,7 @@
 		<tr>
 			<td>요구사항 정의</td>
 			<td>V & V( Validation & Verifitcation ) </td>
-			<td>ㄱ</td>
+			<td></td>
 			<td>-</td>
 			<td>-</td>
 			<td>-</td>
