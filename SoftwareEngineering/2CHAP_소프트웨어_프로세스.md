@@ -170,7 +170,7 @@
 			<td>-</td>
 		</tr>
 		<tr>
-			<td rowspan="4" colspan="4">ㄴ-></td>
+			<td rowspan="4" colspan="4">ㄴ-> (phase 2)</td>
 			<td>디자인</td>
 			<td>V & V</td>
 			<td>ㄱ</td>
