@@ -143,7 +143,7 @@
 			<td>요구사항 정의</td>
 			<td>V & V</td>
 			<td>ㄱ</td>
-			<td colspan="3" rowspan="3">-</td>
+			<td>-</td>
 			<td>-</td>
 			<td>-</td>
 			<td>-</td>
