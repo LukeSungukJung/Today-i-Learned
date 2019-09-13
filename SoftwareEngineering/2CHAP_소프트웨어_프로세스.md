@@ -121,7 +121,7 @@
 <table>
 	<tbody>
 		<tr>
-			<td>-</td>
+			<td colspan="2">-</td>
 			<td>-</td>
 			<td>-</td>
 			<td>-</td>
@@ -181,7 +181,7 @@
 			<td>-</td>
 		</tr>
 		<tr>
-			<td>-</td>
+			<td rowspan="2">-</td>
 			<td>-</td>
 			<td>-</td>
 			<td>-</td>
