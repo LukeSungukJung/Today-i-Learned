@@ -172,7 +172,7 @@
 		</tr>
 		<tr>
 			<td>-</td>
-			<td></td>
+			<td>ㄴ</td>
 			<td>명세화</td>
 			<td>V & V</td>
 			<td>-</td>
@@ -186,15 +186,8 @@
 			<td>-</td>
 			<td>-</td>
 			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
 		</tr>
 		<tr>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
 			<td>-</td>
 			<td>-</td>
 			<td>-</td>
@@ -205,10 +198,7 @@
 			<td>-</td>
 			<td>-</td>
 			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
+
 		</tr>
 	</tbody>
 </table>
