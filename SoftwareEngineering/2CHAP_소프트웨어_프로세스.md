@@ -144,7 +144,7 @@
 			<td>V & V</td>
 			<td>ㄱ</td>
 			<td>-</td>
-			<td colspan="4" rowspan="4">-</td>
+			<td colspan="4" rowspan="3">-</td>
 		</tr>
 		<tr>
 			<td>ㄴ</td>
