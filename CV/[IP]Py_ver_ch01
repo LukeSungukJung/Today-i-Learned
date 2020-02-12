@@ -1,0 +1,6 @@
+import cv2
+#import matplotlib.pyplot as plt
+sujihye = cv2.imread('./goddess.jpg')
+
+
+cv2.imshow('aa',sujihye)
