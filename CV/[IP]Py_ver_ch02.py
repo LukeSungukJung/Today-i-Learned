@@ -17,7 +17,7 @@ scale128image=cv2.merge([np.floor(r/128)*128,np.floor(g/128)*128,np.floor(b/128)
 
 orginal = cv2.merge([r,g,b])
 
-ans = skimage.io.imshow(cv2.resize(orginal,(300,300)))
+#ans = skimage.io.imshow(cv2.resize(orginal,(300,300)))
 
 
 def rgb_bilinear_interpolation(img,row,col):
@@ -32,8 +32,8 @@ def rgb_bilinear_interpolation(img,row,col):
 
     for i in range(0,row):
         for j in range(0,col):
-            py= j*y_scale
-            px= i*x_scale 
+            py= j*y_scale -1
+            px= i*x_scale -1
             s= px -np.floor(px) 
             t= py -np.floor(py)
             
@@ -44,4 +44,4 @@ def rgb_bilinear_interpolation(img,row,col):
                 
     return res_img
 
-ans = skimage.io.imshow(np.uint8(rgb_bilinear_interpolation(orginal,300,300)))  
+ans = skimage.io.imshow(np.uint8(rgb_bilinear_interpolation(orginal,600,600)))  
