@@ -30,9 +30,9 @@ def customHistCDF_Nomalize(img):
         b_hist_array[img[b]]+=1
         
     fig= plt.figure()
-    plt.plot(rgb_hist_arr[0])
-    plt.plot(rgb_hist_arr[1])
-    plt.plot(rgb_hist_arr[2])
+    #plt.plot(r_hist_array)
+    #plt.plot(g_hist_array)
+    #plt.plot(b_hist_array)
     
     r_hist_array/=np.sum(r_hist_array)
     g_hist_array/=np.sum(g_hist_array)
@@ -115,8 +115,5 @@ def tranform_rgb_hist_pool(rgb_hist_arr):
             
     
 output = tranform_rgb_hist_pool(rgb_hist_arr)
-
-
-
-
+skimage.io.imshow(np.uint8(output))
 
