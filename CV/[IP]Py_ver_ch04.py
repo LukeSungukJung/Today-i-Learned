@@ -1,0 +1,1 @@
+#todo mirroring with average laplacian and sobel median
