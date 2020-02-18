@@ -1,5 +1,4 @@
-#todo mirroring with average laplacian and sobel median
-
+#todo mirroring with average laplacian and sobel median and gaussian
 
 import cv2
 import matplotlib.pyplot as plt
@@ -47,7 +46,8 @@ def makeLaplacian_filter(w,h):
     res[center_x+xpm-1][center_y] = 1
     res[center_x][center_y+ypm-1] = 1
     return res
-        
-        
-    
-    
+
+def average_filter(w,h):
+    res = np.ones((w,h))
+    res /=(w*h)
+    return res
