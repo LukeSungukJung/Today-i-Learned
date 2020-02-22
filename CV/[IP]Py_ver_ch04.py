@@ -47,7 +47,40 @@ def makeLaplacian_filter(w,h):
     res[center_x][center_y+ypm-1] = 1
     return res
 
+#only 3x3 5x5 7x7 ......
 def average_filter(w,h):
     res = np.ones((w,h))
     res /=(w*h)
     return res
+
+def mirror_padding(w,h,img):
+    ori_x_max = img.shape[0]
+    ori_y_max = img.shape[1]
+    ori_chennal = img.shape[2]
+    padding_x_size = np.int((w-1)/2)
+    padding_y_size = np.int((h-1)/2)
+    res = np.zeros((ori_x_max+padding_x_size*2,ori_y_max+padding_y_size*2,ori_chennal))
+    res[padding_x_size:ori_x_max+padding_x_size,padding_y_size:ori_y_max+padding_y_size:,] = original
+    res[padding_x_size-1::-1,padding_y_size:padding_y_size+ori_y_max:,] = original[0:padding_x_size,0:ori_y_max]
+    res[ori_x_max+padding_x_size:ori_x_max+padding_x_size*2,padding_y_size:padding_y_size+ori_y_max:,] = original[ori_x_max-1:ori_x_max-padding_x_size-1:-1,0:ori_y_max]
+    res[padding_x_size-1::-1,padding_y_size:padding_y_size+ori_y_max:,] = original[0:padding_x_size,0:ori_y_max]
+    res[0:ori_x_max+2*padding_x_size, padding_y_size:0:-1,] = res[0:ori_x_max+2*padding_x_size, padding_y_size:padding_y_size*2:,]
+    res[0:ori_x_max+2*padding_x_size, ori_y_max+padding_y_size:ori_y_max+padding_y_size*2] = res[0:ori_x_max+2*padding_x_size,ori_y_max+padding_y_size-1:ori_y_max-1:-1,]
+    return res
+    
+    
+    
+                    
+                
+            
+            
+        
+    return res
+    
+def medianfilter(w,h):
+    None
+    
+def sobel_filter(w,h):
+    None
+    
+    
