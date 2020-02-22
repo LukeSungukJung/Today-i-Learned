@@ -45,6 +45,7 @@ def makeLaplacian_filter(w,h):
     res[center_x][center_y-ypm+1] = 1
     res[center_x+xpm-1][center_y] = 1
     res[center_x][center_y+ypm-1] = 1
+    res[center_x][center_y]*=-1
     return res
 
 #only 3x3 5x5 7x7 ......
@@ -67,20 +68,25 @@ def mirror_padding(w,h,img):
     res[0:ori_x_max+2*padding_x_size, padding_y_size:0:-1,] = res[0:ori_x_max+2*padding_x_size, padding_y_size:padding_y_size*2:,]
     res[0:ori_x_max+2*padding_x_size, ori_y_max+padding_y_size:ori_y_max+padding_y_size*2] = res[0:ori_x_max+2*padding_x_size,ori_y_max+padding_y_size-1:ori_y_max-1:-1,]
     return res
-    
-    
-    
-                    
-                
-            
-            
-        
+
+def laplcian_adaption(w,h,img):
+    res =  np.zeros(img.shape)
+    mirror_img = mirror_padding(w,h,img)
+    laplacian_filter =  makeLaplacian_filter(w,h)
+    for x in range(0,img.shape[0]):
+        for y in range(0,img.shape[1]):
+            res[x,y,0] = np.mean(np.dot(laplacian_filter,mirror_img[x:x+w,y:y+h,0]))
+            res[x,y,1] = np.mean(np.dot(laplacian_filter,mirror_img[x:x+w,y:y+h,1]))
+            res[x,y,2] = np.mean(np.dot(laplacian_filter,mirror_img[x:x+w,y:y+h,2]))
     return res
     
-def medianfilter(w,h):
-    None
-    
-def sobel_filter(w,h):
-    None
-    
-    
+def average_adaption(w,h,img):
+    res =  np.zeros(img.shape)
+    mirror_img = mirror_padding(w,h,img)
+    avg_filter =  average_filter(w,h)
+    for x in range(0,img.shape[0]):
+        for y in range(0,img.shape[1]):
+            res[x,y,0] = np.sum(np.dot(avg_filter,mirror_img[x:x+w,y:y+h,0]))
+            res[x,y,1] = np.sum(np.dot(avg_filter,mirror_img[x:x+w,y:y+h,1]))
+            res[x,y,2] = np.sum(np.dot(avg_filter,mirror_img[x:x+w,y:y+h,2]))
+    return res
