@@ -4,13 +4,13 @@ import cv2
 import matplotlib.pyplot as plt
 import skimage
 import numpy as np
-
+from skimage.color import rgb2gray
 sujihye = cv2.imread('./goddess2.jpg')
 
 b, g, r = cv2.split(sujihye)
 original = cv2.merge([r,g,b])
 
-
+gray_original = rgb2gray(original)
 
 skimage.io.imshow(original)
 
@@ -61,10 +61,10 @@ def mirror_padding(w,h,img):
     padding_x_size = np.int((w-1)/2)
     padding_y_size = np.int((h-1)/2)
     res = np.zeros((ori_x_max+padding_x_size*2,ori_y_max+padding_y_size*2,ori_chennal))
-    res[padding_x_size:ori_x_max+padding_x_size,padding_y_size:ori_y_max+padding_y_size:,] = original
-    res[padding_x_size-1::-1,padding_y_size:padding_y_size+ori_y_max:,] = original[0:padding_x_size,0:ori_y_max]
-    res[ori_x_max+padding_x_size:ori_x_max+padding_x_size*2,padding_y_size:padding_y_size+ori_y_max:,] = original[ori_x_max-1:ori_x_max-padding_x_size-1:-1,0:ori_y_max]
-    res[padding_x_size-1::-1,padding_y_size:padding_y_size+ori_y_max:,] = original[0:padding_x_size,0:ori_y_max]
+    res[padding_x_size:ori_x_max+padding_x_size,padding_y_size:ori_y_max+padding_y_size:,] = img
+    res[padding_x_size-1::-1,padding_y_size:padding_y_size+ori_y_max:,] = img[0:padding_x_size,0:ori_y_max]
+    res[ori_x_max+padding_x_size:ori_x_max+padding_x_size*2,padding_y_size:padding_y_size+ori_y_max:,] = img[ori_x_max-1:ori_x_max-padding_x_size-1:-1,0:ori_y_max]
+    res[padding_x_size-1::-1,padding_y_size:padding_y_size+ori_y_max:,] = img[0:padding_x_size,0:ori_y_max]
     res[0:ori_x_max+2*padding_x_size, padding_y_size:0:-1,] = res[0:ori_x_max+2*padding_x_size, padding_y_size:padding_y_size*2:,]
     res[0:ori_x_max+2*padding_x_size, ori_y_max+padding_y_size:ori_y_max+padding_y_size*2] = res[0:ori_x_max+2*padding_x_size,ori_y_max+padding_y_size-1:ori_y_max-1:-1,]
     return res
