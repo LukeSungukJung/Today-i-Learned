@@ -28,15 +28,23 @@ def draw_line(line_list,img):
         for i,oo in enumerate(one):
             if oo == img_shape[0] or oo == img_shape[1]:
                 
-                one[i] = oo-2
+                one[i] = oo-1
+            if oo == 0:
+                
+                one[i] = oo+1
         x1y1 = (one[0],one[1])
         x1y2 = (one[0],one[3])
         x2y1 = (one[2],one[1])
         x2y2 = (one[2],one[3])
         
-        res[x1y1[0]:x2y1[0], x1y1[1]+1,] = np.asarray([255,0,0])
-        res[x1y1[0]+1, x1y1[1]:x1y2[1],] = np.asarray([255,0,0])
-        res[x1y2[0]:x2y2[0], x1y2[1]+1,] = np.asarray([255,0,0])
-        res[x2y1[0]+1, x2y1[1]:x2y2[1],] = np.asarray([255,0,0])
+        res[x1y1[0]:x2y1[0],x1y1[1],:] = np.asarray([255,0,0])
+        res[x1y1[0],x1y1[1]:x1y2[1],:] = np.asarray([255,0,0])
+        res[x1y2[0]:x2y2[0], x1y2[1],:] = np.asarray([255,0,0])
+        res[x2y1[0], x2y1[1]:x2y2[1],:] = np.asarray([255,0,0])
+        print("x1,y1",x1y1)
+        print("x1,y2",x1y2)
+        print("x2,y1",x2y1)
+        print("x2,y2",x2y2)
+
         
     return res
