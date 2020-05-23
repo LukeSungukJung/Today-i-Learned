@@ -1,0 +1,162 @@
+
+<h1>SQL 쿼리문 기본 정리</h1>
+
+<h3>컬럼의 종류</h3>
+
+<table>
+	<thead>
+		<tr>
+			<td>데이터 유형</td>
+			<td>설명</td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Varchar</td>
+			<td>Character varying의 약자로 가변 길이의 문자열 정보임 sql의 경우 최대 8000바이트 저장 가능</td>
+		</tr>
+		<tr>
+			<td>NUMERIC</td>
+			<td>정수, 실수 등 숫자 정볼르 가지고 있음 표기법의 예로 정수부분이 6자리 소수점이 2자리인것을 표현하면 NUMERIC(8,2)로 표기하면 된다.</td>
+		</tr>
+			<tr>
+			<td>DATE</td>
+			<td>날짜와 시간정보 관리함</td>
+		</tr>
+	</tbody>
+	</table>
+<div>
+<h3>제약 조건의 종류</h3>
+
+<ul>
+	<li>PRIMARY KEY(기본키) : 기본키 중복안되고, NULL입력 안됨. </li>
+	<li>UNIQUE KEY(고유키) : NULL있어도 됨, 다만 중복만 안됨</li>
+	<li>NOT NULL : 무조건 비우면 안됨 'DEFAULT'설정이 되어있으면, 새로운 로 추가시 아무값입력안하면 디폴트 세팅이 들어감</li>
+	<li>CHECK :  TRUE FALSE로 평가 할수 있는 논리식 지정</li>
+	<li>FOREIGN KEY(외래키) : 다른 테이블과의 관계를 정의하기위해 기본키를 다른 테이블의 왜리키로 복사하는 경우의 복사된 기본키를 지칭함.</li>
+
+</ul>
+</div>
+
+
+
+<div>
+<h3>SQL 문장들의 종류</h3>
+
+<ul>
+	<li><a  href="#dml">DML: 데이터 조작어 -[SELECT, INSERT, UPDATE, DELETE]</a></li>
+	<li><a  href="#ddl">DDL: 데아터 정의어 -[CREATE, ALTER DROP, RENAME]</a></li>
+	<li><a  href="#dcl">DCL: 데이터 제어어 -[GRANT, REVOKE]</a></li>
+	<li><a  href="#tcl">TCL: 트랜잭션 제어어 -[COMMIT, ROLLBACK]</a></li>
+
+</ul>
+</div>
+
+<div id="dml">
+<h3>DML</h3>
+<ul>
+	<li>INSERT (syntax) - INSERT INTO 테이블명 (컬럼리스트) VALUES(값1,값2,....) :  테이블에 넣을 컬럼을 정의해주고 그 컬럼을 채울 값들을 입력해준후 새로운 행을 추가함.</li>
+	<li>UPDATE (syntax)- UPDATE TABLE tablename  SET 컬럼명 = 새로운 값  : 테이블에 컬럼 명 제거</li>
+	<li>DELETE (syntax)- DELETE [FROM] tablename : 테이블의 정보가 필요 없게 되었을 경우 데이터 삭제를 수행함 where 절로 어디 조질지 위치 지정가능. 암것도없이 그냥 저대로 쓰면 테이블 전체 데이터가 삭제댐</li>
+	<li>SELECT (syntax)- SELECT [ALL/DISTINCT] 보고싶은 컬럼명1,2,3... FROM 테이블명;  : 테이블에서 보고싶은 컬럼명을 보여줌 ALL-디폴트로 중복데이터도 다보여줌, DISTINCT - 중복데이터는 제거해서 보여줌  *(와일드카드) 사용시 전체 보여줌, 좌측정렬: 문자 및 날짜 데이터, 우측정렬: 숫자 데이터</li>
+	<li>ALIAS (syntax) 컬럼명 as 별명, 컬럼명2 as 별명2,... : 조회된 데이터에 별명을 부과해서 컬럼 레이블을 변경 가능함.  ALIAS는 컬럼명 바로 뒤에 오고, 특수문자 공백  대소문자구분이 필요할 경우 사용됨. 별명에 공백이 들어갈경우 "",'',[]를 써야댐 "선수 이름" 등 이런식으로 지정해줘야댐</li>
+</ul>
+<h4>산술 연산자</h4>
+<p>+,-,/,* 우리가 아는 그 연산자 예시: select 몸무게+ 키 as "몸무게 더하기 키" from 선수들로 하면 각 로우의 몸무게 + 키 값을 더한것을 앨리어스로 해서 계산한 값을 보여줌</p>
+<h4>합성 연산자</h4>
+<p>문자와 문자를 연결하는 합성 연산자를 사용하면 별도의 프로그램 도움 없이도 sql 문장가지고만 유용한 리포트를 출력 가능하다.</p>
+<ul>
+	<li>문자와 문자를 연결하는 경우 2개의 수직 바(||)에 의해 이루어진다.(오라클)</li>
+	<li>문자와 문자를 연결하는 경우 '+'에 의해 이루어진다.(sql server)</li>
+	<li>두 벤더 모두 공통적으로 CONCAT(str1,str2)를 이용해서 연결 가능하다.</li>
+	<li>컬럼과 문자 또는 다른 컬럼과 연결 시킬수도 있음.</li>
+	<li>문자 표현식의 결과에 의해 새로운 칼럼을 생성한다.</li>	
+</ul>
+</div>
+
+<div id="ddl">
+<h3>DDL</h3>
+<ul>
+	<li>ADD (syntax)- ALTER TABLE tablename  ADD 컬럼명 데이터 유형  : 테이블에 새로운 컬럼 명 추가</li>
+	<li>DROP (syntax)- ALTER TABLE tablename  DROP 컬럼명  : 테이블에  컬럼 명 제거</li>
+	<li>MODIFY (syntax)- ALTER TABLE tablename  MODIFY (컬럼명 데이터유형 [DEFAULT 식][NOT NULL], 컬럼명2 데이터유형...);  : 테이블에  컬럼명에 대해서 제약조건 등에 대한 변경</li>
+	<li>RENAME (syntax)- ALTER TABLE tablename  RENAME 컬럼명 TO  새로운 컬럼명;  : 테이블에  컬럼명에 대해서 새로운 컬럼명으로 변경</li>
+	<li>DROP CONSTRAINT (syntax)- ALTER TABLE tablename  DROP CONSTRAINT 제약조건명;  : 테이블에  제약조건명에 대해서 제거</li>
+	<li>ADD CONSTRAINT (syntax)- ALTER TABLE tablename  ADD CONSTRAINT 제약조건명 제약조건(컬럼명);  : 테이블에 입력한 제약조건을 가진 제약조건명에 대해서 입력한 컬럼에 대해 추가함</li>
+	<li>DROP TABLE(syntax)- DROP 테이블명  : 해당 테이블 제거</li>
+	<li>TRUNCATE TABLE (syntax)- ALTER TABLE tablename  DROP 컬럼명  : 테이블에 있는 모든 행들을 제거 테이블과 컬럼들은 남겨둠</li>
+</ul>
+
+
+</div>
+
+<div id="dcl">
+<h3>DCL</h3>
+
+
+
+</div>
+
+
+<div id="tcl">
+<h3>TCL : 트랜잭션 컨트롤 언어</h3>
+<p>트랜잭션의 정의 : 트랜잭션은 데이터베이스의 논리적 연산 단위로 밀접히 관련되어 분리될 수 없는 한개 이상의 데이터베이스 조작을 의미함. 즉 하나의 트랜잭션에는 하나이상의 sql문이 포함된다. </p>
+<p>트랜잭션은 데이터베이스의 논리적 연산 단위로 밀접히 관련되어 분리될 수 없는 한개 이상의 데이터베이스 조작을 의미함. 즉 하나의 트랜잭션에는 하나이상의 sql문이 포함된다. </p>
+<h3>트랜잭션의 특성</h3>
+<ul>
+	<li>원자성(atomicity) : 트랜잭션에서 정의된 연산들은 모두 성공적으로 실행되던지 아니면 전혀 실행되지 않은 상태로 남아있어야 한다.</li>
+	<li>일관성(consistency) : 트랜잭션이 실행되기 전의 데이터베이스 내용이 잘못되어 있지 않으면, 트랜잭션이 실행된 이후에도 데이터베이스의 내용에 잘못이 있으면 안된다.</li>
+	<li>고립성(isolation) : 트랜잭션이 실행되는 도중에 다른 트랜잭션의 영향을 받아 잘못된 결과를 만들어서는 안된다.</li>
+	<li>지속성(durability) : 트랜잭션이 성공적으로 수행되면 그 트랜잭션이 갱신한 데이터베이스의 내용은 영구적으로 저장된다.</li>
+</ul>
+
+<ul>
+	<li>COMMIT : 올바르게 반영된 데이터를 데이터베이스에 반영 시킴.</li>
+	<li>ROLLBACK : 트랜잭션 시작 이전의 상태로 돌림</li>
+	<li>SAVEPOINT : 저장점 기능을 함.</li>
+</ul>
+
+<h3>COMMIT</h3>
+<ul>
+	<li>원자성(atomicity) : 트랜잭션에서 정의된 연산들은 모두 성공적으로 실행되던지 아니면 전혀 실행되지 않은 상태로 남아있어야 한다.</li>
+	<li>일관성(consistency) : 트랜잭션이 실행되기 전의 데이터베이스 내용이 잘못되어 있지 않으면, 트랜잭션이 실행된 이후에도 데이터베이스의 내용에 잘못이 있으면 안된다.</li>
+	<li>고립성(isolation) : 트랜잭션이 실행되는 도중에 다른 트랜잭션의 영향을 받아 잘못된 결과를 만들어서는 안된다.</li>
+	<li>지속성(durability) : 트랜잭션이 성공적으로 수행되면 그 트랜잭션이 갱신한 데이터베이스의 내용은 영구적으로 저장된다.</li>
+</ul>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
