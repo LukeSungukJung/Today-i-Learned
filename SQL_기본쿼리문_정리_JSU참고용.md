@@ -104,13 +104,34 @@
 			<td>작다,작거나 같다</td>
 		</tr>
 		<tr>
-			<td rowspan="3">비교 연산자</td>
-			<td></td>
-			<td></td>
+			<td rowspan="4">SQL 연산자</td>
+			<td>BETWEEN a AND b</td>
+			<td>a와 b의 값 사이에 있으면 된다. (a,b 포함)</td>
 		</tr>
-			<td rowspan="3">비교 연산자</td>
-			<td></td>
-			<td></td>
+		<tr>
+			<td>IN(list)</td>
+			<td>리스트에 있는 값 중에서 어느 하나라도 일치하면 된다.</td>
+		</tr>
+				<tr>
+			<td>Like '문자열'</td>
+			<td>문자열과 형태가 일치하면 된다. (%: 문자 여러개,_ :문자 하나사용)</td>
+		</tr>
+		<tr>
+			<td>IS NULL</td>
+			<td>NULL 값인 경우</td>
+		</tr>
+			<tr>
+			<td rowspan="3">논리 연산자</td>
+			<td>AND/td>
+			<td> AND 연산</td>
+		</tr>
+			<tr>
+			<td>OR</td>
+			<td>OR 연산</td>
+		</tr>
+			<tr>
+			<td>NOT</td>
+			<td>뒤에 오는  조건에 대해 반대되는 결과를 되돌려 준다.</td>
 		</tr>
 	</tbody>
 	</table>
