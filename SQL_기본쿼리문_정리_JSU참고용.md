@@ -38,8 +38,6 @@
 </ul>
 </div>
 
-
-
 <div>
 <h3>SQL 문장들의 종류</h3>
 
@@ -181,6 +179,33 @@
 	<li> <> : SELECT * from EMP WHERE POSITION <> 'CIA'; : POSITIOn이 CIA가 아닌 직원 출력 </li>
 </ul>
 
+<h2>함수</h2>
+<ul>
+	<li><a href="#dan1hangfunc">단일행 함수</a></li><li></li>
+<li></li>
+	</ul>
+<h3 id="dan1hangfunc">단일행 함수</h3>
+<p>특징</p>
+<ul>
+	<li>SELECT,Where, order by절에 사용 가능하다.</li>
+	<li>각 행들에 대해 개별적으로 작용하여 데이터 값들을 조작하고, 각각의 행에 대한 조작 결과를 리턴한다.</li>
+	<li>여러 인자를 입력해도 단 하나의 결과만 나온다.</li>
+	<li>함수의 인자로 상수,변수 표현식이 사용 가능하고, 하나의 인수를 가지는 경우도 있지만, 여러개의 인수를 가질 수도 있다.</li>
+	<li>특별한 경우가 아니면 함수의 인자로 함수를 사용하는 충첩이 가능하다.</li>
+</ul>
+<p>syntax : 함수명 (칼럼이나 표현식, [arg1,arg2, ...]) </p>
+<ul>
+	<li><a href="#str1func">문자형 함수</a> : 문자를 입력하면 문자나 숫자 값을 반환한다. ex(LOWER, UPPER, SUBSTR/SUBSTRING, LENGTH/LEN, LTRIM, RTRIM, TRIM)</li>
+	<li><a href="#num1func">숫자형 함수 : 숫자를 입력하면 문자나 숫자 값을 반환한다. ex(ABS, MOD, ROUND, TRUNC,SIGN, CHR/CHAR, CEIL, FLOOR, POWER 등 )</li>
+	<li><a href="#date1func">날자형 함수 : DATA 타입의 값을 연산한다. ex(SYSDATE/GETDATE, EXTRACT/DATEPART, TO_NUMBER(TO_CHAR(d,'YYYY'|'MM'|'DD'))/ YEAR|MONTH|DAY)</li>
+	<li><a href="#con1func">변환형 함수 : 문자, 숫자, 날짜형 값의 데이터를 변환한다. ex(TO_NUMBER, TO_CHAR, TO_DATE/CAST, CONVERY 등 )</li>
+	<li><a href="#null1func">NULL 관련 함수 : NULL을 처리하기 위한 함수 ex(NVL/ISNULL, NULLIF, COALESCE )</li>
+</ul>
+<h3 id="str1func">문자형 함수</h3>
+<h3 id="num1func">숫자형 함수</h3>
+<h3 id="date1func">날자형 함수</h3>
+<h3 id="con1func">변환형 함수</h3>
+<h3 id="null1func">NULL 관련함수</h3>
 
 </div>
 
