@@ -72,6 +72,38 @@
 	<li>컬럼과 문자 또는 다른 컬럼과 연결 시킬수도 있음.</li>
 	<li>문자 표현식의 결과에 의해 새로운 칼럼을 생성한다.</li>	
 </ul>
+<h4>Where절</h4>
+<p>where : 보통 select * from 테이블 where 조건식 으로 select 문에 끼어서 조건을 부여해서 찿고자하는 조건을 부과해서 사용자가 보여주고 싶은 정보만 선택적으로 보여주게 한다.</p>
+<p>조건식의 내용</p>
+<ul>
+	<li>칼럼(Column)명 </li>
+	<li>비교 연산자</li>
+	<li>문자, 숫자, 표현식</li>
+	<li>비교 칼럼명(JOIN 사용시)</li>
+</ul>
+<table>
+	<thead>
+		<tr>
+			<td>구분</td>
+			<td>연산자</td>
+			<td>연산자의 의미</td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td rowspan="2">비교 연산자</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>ㄴ
+			<td></td>
+			<td></td>
+		</tr>
+			<td></td>
+			<td></td>
+		</tr>
+	</tbody>
+	</table>
 </div>
 
 <div id="ddl">
@@ -158,12 +190,7 @@
 	<li>이전 데이터가 재 저장된다.</li>
 	<li>관련된 행에 대해 잠금이 풀리고, 다른 사용자들이 행을 조작 할 수 있게 된다.</li>
 </ul>
-
 </div>
-
-
-
-
 
 
 
