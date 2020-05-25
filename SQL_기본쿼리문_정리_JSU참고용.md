@@ -196,10 +196,10 @@
 <p>syntax : 함수명 (칼럼이나 표현식, [arg1,arg2, ...]) </p>
 <ul>
 	<li><a href="#str1func">문자형 함수</a> : 문자를 입력하면 문자나 숫자 값을 반환한다. ex(LOWER, UPPER, SUBSTR/SUBSTRING, LENGTH/LEN, LTRIM, RTRIM, TRIM)</li>
-	<li><a href="#num1func">숫자형 함수 : 숫자를 입력하면 문자나 숫자 값을 반환한다. ex(ABS, MOD, ROUND, TRUNC,SIGN, CHR/CHAR, CEIL, FLOOR, POWER 등 )</li>
-	<li><a href="#date1func">날자형 함수 : DATA 타입의 값을 연산한다. ex(SYSDATE/GETDATE, EXTRACT/DATEPART, TO_NUMBER(TO_CHAR(d,'YYYY'|'MM'|'DD'))/ YEAR|MONTH|DAY)</li>
-	<li><a href="#con1func">변환형 함수 : 문자, 숫자, 날짜형 값의 데이터를 변환한다. ex(TO_NUMBER, TO_CHAR, TO_DATE/CAST, CONVERY 등 )</li>
-	<li><a href="#null1func">NULL 관련 함수 : NULL을 처리하기 위한 함수 ex(NVL/ISNULL, NULLIF, COALESCE )</li>
+	<li><a href="#num1func">숫자형 함수</a> : 숫자를 입력하면 문자나 숫자 값을 반환한다. ex(ABS, MOD, ROUND, TRUNC,SIGN, CHR/CHAR, CEIL, FLOOR, POWER 등 )</li>
+	<li><a href="#date1func">날자형 함수</a> : DATA 타입의 값을 연산한다. ex(SYSDATE/GETDATE, EXTRACT/DATEPART, TO_NUMBER(TO_CHAR(d,'YYYY'|'MM'|'DD'))/ YEAR|MONTH|DAY)</li>
+	<li><a href="#con1func">변환형 함수</a> : 문자, 숫자, 날짜형 값의 데이터를 변환한다. ex(TO_NUMBER, TO_CHAR, TO_DATE/CAST, CONVERY 등 )</li>
+	<li><a href="#null1func">NULL 관련 함수</a> : NULL을 처리하기 위한 함수 ex(NVL/ISNULL, NULLIF, COALESCE )</li>
 </ul>
 <h3 id="str1func">문자형 함수</h3>
 <h3 id="num1func">숫자형 함수</h3>
