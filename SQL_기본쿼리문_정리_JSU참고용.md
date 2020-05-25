@@ -121,20 +121,67 @@
 			<td>NULL 값인 경우</td>
 		</tr>
 			<tr>
-			<td rowspan="3">논리 연산자</td>
-			<td>AND/td>
-			<td> AND 연산</td>
+			<td rowspan="3">부정 비교 연산자</td>
+			<td><>,!=,^=</td>
+			<td> 같지 않다</td>
+		<tr>
+			<td>NOT 칼럼명 = </td>
+			<td>~와 같지 않다.</td>
+		</tr>
+				<tr>
+			<td>NOT 칼럼명 ></td>
+			<td>~ 보다 크지 않다.</td>
 		</tr>
 			<tr>
-			<td>OR</td>
-			<td>OR 연산</td>
+			<td rowspan="3">부정 SQL 연산자</td>
+			<td>NOT BETWEEN a AND b</td>
+			<td>a와 b의 값 사이에 있으면 안된다. (a,b 포함)</td>
 		</tr>
-			<tr>
-			<td>NOT</td>
-			<td>뒤에 오는  조건에 대해 반대되는 결과를 되돌려 준다.</td>
+		<tr>
+			<td>NOT IN(list)</td>
+			<td>리스트에 있는 값 중에서 어느 하나라도 일치하면 안된다.</td>
+		<tr>
+			<td>IS NOT NULL</td>
+			<td>NULL 값이 아닌 경우</td>
 		</tr>
 	</tbody>
 	</table>
+	<p>연산자의 우선 순위</p>
+<ul>
+	<li>1 : 괄호 ()</li>
+	<li>2 : NOT 연산자</li>
+	<li>3 : 비교연산자, SQL 비교 연산자</li>
+	<li>4 : AND</li>
+	<li>5 : OR</li>	
+</ul>
+
+<h4>ROWNUM,TOP</h4>
+<p>ROWNUM :  select 출력시 원하는 만큼만 가져옴 </p>
+<p>한건만 가져오고 싶을 때</p>
+<ul>
+	<li>SELECT * from EMP WHERE ROWNUM = 1</li>
+	<li>SELECT * from EMP WHERE ROWNUM < 2</li>
+	<li>SELECT * from EMP WHERE ROWNUM <= 1</li>
+</ul>
+<p>TOP :  select 출력되는 행의 수를 제한함 (syntax) :  TOP (Expression) [PERCENT][WITH TIES] </p>
+<ul>
+	<li>Expression : 반환할 행의 수를 지정하는 숫자임</li>
+	<li>PERCENT : 쿼리 결과 집합에서 처음 Expression%의 행만 반환 됨을 알 수 있음</li>
+	<li>WITH TIES :  ORDER BY절이 지정된 경우에만 사용 가능하며, TOP N(PERCENT)의 마지막 행과 같은 값이 있는 경우 추가 행이 출력 되도록 지정 할수 있음.</li>
+</ul>
+<ul>
+	<li>한건만 가져오고 싶을 때 : SELECT TOP(1) * from EMP</li>
+	<li>N건만 가져오고 싶을 때 : SELECT TOP(N) * from EMP</li>
+</ul>
+<h4>SQL 연산자 예시</h4>
+<ul>
+	<li>IN (list) 연산자 : SELECT * from EMP where (JOB,DEPTNO) IN (('MANAGER',20),('CLERK',30)),SELECT * from EMP where JOB IN (('MANAGER','CLERK') AND DEPTNO IN (20,30)) -- 사원 테이블에서 JOB이 CLERK이면서 30번 부서에 속하거나 JOB이 MANAGER이면서 20번에 속하는 사람 찿아서 출력 </li>
+	<li>BETWEEN a AND b : SELECT * from EMP WHERE HEIGHT BETWEEN 170 AND 180; :  키가 170-180 사이에 있는 직원 출력 </li>
+	<li>NULL : SELECT * from EMP WHERE HEIGHT IS NULL (* HEIGHT= NULL 하면 대가리깨져도 안뜸) :  키가 NULL인  직원 출력 </li>
+	<li> <> : SELECT * from EMP WHERE POSITION <> 'CIA'; : POSITIOn이 CIA가 아닌 직원 출력 </li>
+</ul>
+
+
 </div>
 
 <div id="ddl">
