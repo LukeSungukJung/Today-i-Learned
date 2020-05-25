@@ -91,14 +91,24 @@
 	</thead>
 	<tbody>
 		<tr>
-			<td rowspan="2">비교 연산자</td>
+			<td rowspan="3">비교 연산자</td>
+			<td>=</td>
+			<td>같다</td>
+		</tr>
+		<tr>
+			<td>>,>=</td>
+			<td>크다,크거나 같다</td>
+		</tr>
+		<tr>
+			<td><,<=</td>
+			<td>작다,작거나 같다</td>
+		</tr>
+		<tr>
+			<td rowspan="3">비교 연산자</td>
 			<td></td>
 			<td></td>
 		</tr>
-		<tr>ㄴ
-			<td></td>
-			<td></td>
-		</tr>
+			<td rowspan="3">비교 연산자</td>
 			<td></td>
 			<td></td>
 		</tr>
