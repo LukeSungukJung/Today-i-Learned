@@ -2,25 +2,9 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 
-img = cv2.imread('./ham.jpg')
+img = cv2.imread('./hcf_test2.jpg')
 img = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
 height,width=  img.shape[0],img.shape[1]
-
-def make_xy_sobel_mask(kernal_size=3):
-    kernal_center  =kernal_size//2
-    x_sobel = np.ones((kernal_size,kernal_size))
-    x_sobel[kernal_center] = np.zeros(kernal_size)
-    for i,xi in enumerate(x_sobel):
-        if i < kernal_center:
-            x_sobel[i][kernal_center] +=1
-        elif i == kernal_center:
-            continue
-        else:
-            x_sobel[i]*=-1
-            x_sobel[i][kernal_center] -=1
-    return x_sobel.T*-1,x_sobel,kernal_center
-
-
 
 def mirror_padding(img,kernal_center_size=1):
     height,width = img.shape[0],img.shape[1]
@@ -37,47 +21,49 @@ def mirror_padding(img,kernal_center_size=1):
     return padding_res
     
 
-def getting_xy_deriviation_img(padded_img,pad_size,x_filter,y_filter,origin_h,origin_w):
-    dx = np.zeros((origin_h,origin_w))
-    dy = np.zeros((origin_h,origin_w))
+def getting_xy_deriviation_img(padded_img,kernal_size,pad_size,origin_h,origin_w):
+    
+    dx,dy = np.gradient(padded_img)
+    dx2 = np.zeros((origin_h,origin_w))
+    dy2 = np.zeros((origin_h,origin_w))
+    dxdy = np.zeros((origin_h,origin_w))
 
     for h in range(pad_size,origin_h+pad_size):
         for w in range(pad_size,origin_w+pad_size):
-           dx[h-pad_size,w-pad_size] = np.sum(padded_img[h-pad_size:h+pad_size+1,w-pad_size:w+pad_size+1]*x_sobel)
-           dy[h-pad_size,w-pad_size] = np.sum(padded_img[h-pad_size:h+pad_size+1,w-pad_size:w+pad_size+1]*y_sobel)
-    return dx,dy
+           dx2[h-pad_size,w-pad_size] = np.sum(cv2.GaussianBlur(np.square(dx[h-pad_size:h+pad_size+1,w-pad_size:w+pad_size+1]),(kernal_size,kernal_size),1))
+           dy2[h-pad_size,w-pad_size] = np.sum(cv2.GaussianBlur(np.square(dy[h-pad_size:h+pad_size+1,w-pad_size:w+pad_size+1]),(kernal_size,kernal_size),1))
+           dxdy[h-pad_size,w-pad_size] = np.sum(cv2.GaussianBlur((dx[h-pad_size:h+pad_size+1,w-pad_size:w+pad_size+1])
+                                                *(dy[h-pad_size:h+pad_size+1,w-pad_size:w+pad_size+1])
+                                                ,(kernal_size,kernal_size),1))
+    return dx2,dy2,dxdy
 
     
-def crf(dx,dy):
-    res = (dx*dx -dx*dy) - K* np.square(dx*dx+dy*dy)
+def crf(dx2,dy2,dxdy,kernal_size):
+    res = (dx2*dy2 -np.square(dxdy)) - K* np.square(dx2+dy2)
     return res
 
-def findConer(crf_res,th=0.5):
+def nms(crf_res,block_box,th=10000):
     res = np.zeros(crf_res.shape)
-    for hi,h in enumerate(crf_res> th):
-        for wi,w in enumerate(h):
-            if w == False:
-                continue
-            else:
-                res[hi][wi]=1
+    for h in range(block_box,crf_res.shape[0]-block_box):
+        for w in range(block_box,crf_res.shape[1]-block_box):
+            if(crf_res[h][w] == np.max(crf_res[h-block_box:h+block_box,w-1:w+2]) and crf_res[h][w]>th):
+               res[h][w]=crf_res[h][w]
     
     return res
-    
-    
     
 kernal_size = 3
 
-x_sobel,y_sobel,pad_size = make_xy_sobel_mask(kernal_size)
+pad_size = kernal_size//2
+
+
 
 mirror_padded_img = mirror_padding(img,pad_size)
 
-dx,dy = getting_xy_deriviation_img(mirror_padded_img,pad_size,x_sobel,y_sobel,height,width)
+dy2,dx2,dxdy = getting_xy_deriviation_img(mirror_padded_img,kernal_size,pad_size,height,width)
 
 K = 0.04
 
-crf_res = crf(dx,dy)
-
-res = findConer(crf_res)
-
+crf_res = crf(dx2,dy2,dxdy,kernal_size)
+res = nms(crf_res,pad_size,10000)*255
 
 
